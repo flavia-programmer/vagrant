@@ -32,6 +32,11 @@ cp /vagrant/config/my.cnf /home/vagrant/.my.cnf
 chmod 0600 /home/vagrant/.my.cnf
 chown vagrant:vagrant /home/vagrant/.my.cnf
 
+echo "Configuring Nginx for Wordpress"
+mkdir /etc/nginx/global/
+cp /vagrant/config/nginx/global/php.conf /etc/nginx/global/
+cp /vagrant/config/nginx/global/restrictions.conf /etc/nginx/global/
+cp /vagrant/config/nginx/global/wordpress.conf /etc/nginx/global/
 echo "Configuring Nginx for coach.dev"
 
 cp /vagrant/config/coach.nginx.conf /etc/nginx/sites-available/coach
