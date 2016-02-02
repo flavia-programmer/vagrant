@@ -28,7 +28,7 @@ echo "Installing MySQL"
 apt-get install mysql-server -y
 
 echo "Setting up MySQL"
-cp /vagrant/config/my.cnf /home/vagrant/.my.cnf
+cp /vagrant/config/mysql/my.cnf /home/vagrant/.my.cnf
 chmod 0600 /home/vagrant/.my.cnf
 chown vagrant:vagrant /home/vagrant/.my.cnf
 
