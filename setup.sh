@@ -37,8 +37,12 @@ mkdir /etc/nginx/global/
 cp /vagrant/config/nginx/global/php.conf /etc/nginx/global/
 cp /vagrant/config/nginx/global/restrictions.conf /etc/nginx/global/
 cp /vagrant/config/nginx/global/wordpress.conf /etc/nginx/global/
-echo "Configuring Nginx for coach.dev"
 
+echo "Setting up Sudoeste Imóveis"
+cp /vagrant/config/nginx/sudoesteimoveis.conf /etc/nginx/sites-available/
+ln -s /etc/nginx/sites-available/sudoesteimoveis.conf /etc/nginx/sites-enabled
+​
+echo "Configuring Nginx for coach.dev"
 cp /vagrant/config/coach.nginx.conf /etc/nginx/sites-available/coach
 ln -s /etc/nginx/sites-available/coach /etc/nginx/sites-enabled/
 
