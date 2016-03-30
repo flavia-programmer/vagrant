@@ -14,10 +14,15 @@ add-apt-repository ppa:ondrej/php5 -y
 apt-get update
 
 echo "Installing PHP"
-apt-get install php5-common php5-dev php5-cli php5-fpm -y
+apt-get install php5-common php5-dev php5-cli php5-fpm php-pear -y
 
 echo "Installing PHP extensions"
 apt-get install curl php5-curl php5-gd php5-mcrypt php5-mysql -y
+
+echo "Installing Xdebug"
+pecl install xdebug -y
+cp/config/php5/php.ini /etc/php5/fpm/php.ini
+service php5-fpm restart
 
 echo "Preparing MySQL"
 apt-get install debconf-utils -y
